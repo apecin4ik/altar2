@@ -1,0 +1,43 @@
+# ───────── Огненный алтарь ─────────
+world: grief-1
+timezone: Europe/Moscow
+spawn-time: "14:00"            # ежедневный автоспавн (по МСК)
+alerts-minutes: [120, 60, 30, 5, 1]
+
+spawn-min: -5000
+spawn-max: 5000
+flat-tolerance: 4              # макс. перепад высот под самой постройкой при выборе места
+
+schematic: fire_cursed_blade_altar.schem   # лежит в plugins/AltarEvent/
+chest-local: [12, 4, 12]       # шалкер: центр постройки, уровень пола (от угла схематики)
+clear-above: 3                 # сколько блоков над шалкером очистить (стеклянный столб)
+
+# ── ровная площадка ──
+flatten-radius: 11             # радиус ровной площадки вокруг постройки (на уровне земли под схематикой)
+flatten-blend: 7               # ширина плавного склона от площадки к естественному рельефу
+decor-margin: 20               # отступ декора/снимка местности (авто-расширяется до flatten-radius + flatten-blend + 2)
+darken-schematic: true         # заменить зелёный дёрн в самой схематике на мрачную землю
+
+# ── атмосфера ──
+dark-sky: true                 # ночь и дождь у алтаря (только для игроков рядом)
+dark-sky-radius: 80
+darkness-pulse: false          # эффект «Тьма» (пульсирующее затемнение экрана) рядом с алтарём
+
+# ── лут и время ──
+sword-chance-percent: 4        # шанс «Клинка Алтаря» в шалкере, в процентах (4 = 4%)
+open-seconds: 300              # шалкер откроется через 5 минут
+after-open-seconds: 900        # алтарь исчезает ровно через 15 минут после открытия (даже если лут разобрали)
+protect-radius: 50
+bossbar-radius: -1             # -1 = боссбар виден всем
+
+guardians:
+  count: 2
+  type: WITHER_SKELETON
+  health: 80
+  damage: 6                    # итоговый урон (с Остротой 5)
+  damage-no-totem: 8           # итоговый урон после потери тотема
+  health-after-totem: 40
+  speed: 0.32
+  leash-radius: 22
+  wither-effect: false
+  xp: 150
